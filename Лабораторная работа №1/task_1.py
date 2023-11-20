@@ -1,5 +1,15 @@
-numbers = [1, 2, 3, 4, 6, 7, 8, 9, 10]
+numbers = [2, -93, -2, 8, None, -44, -1, -85, -14, 90, -22, -90, -100, -8, 38, -92, -45, 67, 53, 25]
 
-missed_number = sum(numbers) / len(numbers)
+# TODO заменить значение пропущенного элемента средним арифметическим
 
-print("Среднее арифметическое,", round(missed_number, 2))
+total_sum = sum(number for number in numbers if number is not None)
+
+count = len(numbers)
+
+mean_number = total_sum / count
+
+numbers = [mean_number if number is None else number for number in numbers]
+
+print("Измененный список:", numbers)
+
+
